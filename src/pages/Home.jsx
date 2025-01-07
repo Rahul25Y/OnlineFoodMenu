@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Nav from "../Components/Nav";
 import Categories from "../Components/Category"; // Ensure Categories is an array
 import Card from "../Components/Card";
 import { food_items } from "../Components/food_items";
+import { dataContext } from "../context/UserContext";
 
 
 function Home() {
-  const [cate,setcate]=useState(food_items);
-
+  // const [cate,setcate]=useState(food_items);
+  let{cate,setcate,input}=useContext(dataContext)
   function filter(category){
    if(category=='All'){
     setcate(food_items)
@@ -19,7 +20,8 @@ function Home() {
   return (
     <div className="bg-slate-200 w-full min-h-screen">
       <Nav />
-      <div className="flex justify-center items-center gap-5 flex-wrap w-full">
+      {
+        !input?<div className="flex justify-center items-center gap-5 flex-wrap w-full">
         {Categories.map((item) => (
           <div
             key={item.id}
@@ -32,6 +34,8 @@ function Home() {
           </div>
         ))}
       </div>
+      :''
+      }
       {/* card item box */}
       <div className="w-full flex justify-center items-center flex-wrap gap-5 px-4 pt-8 pb-8">
         {

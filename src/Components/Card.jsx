@@ -11,7 +11,7 @@ function Card({ id, name, image, price, type }) {
     });
   }, []);
   return (
-    <div className="w-[260px] h-[350px] bg-white p-3 rounded-lg flex flex-col gap-3 shadow-lg hover:border-1 hover:border-green-400 transition-all  ">
+    <div className="w-[350px] h-[450px] md:w-[260px] md:h-[350px] bg-white p-3 rounded-lg flex flex-col gap-3 shadow-lg hover:border-1 hover:border-green-400 transition-all  ">
       <div className="w-[100%] h-[60%] overflow-hidden rounded-lg">
         <img
           src={image}
