@@ -26,7 +26,7 @@ function Nav() {
          />
         </form>
         <div className='w-[60px] h-[58px] bg-white flex items-center justify-center rounded-md shadow-md relative'>
-        <span className=' absolute top-0 right-2 text-green-500 font-bold text-[18px]'>0</span>
+        <span className=' absolute top-0 right-2 text-green-500 font-bold text-[18px]'> 0 </span>
         <LuShoppingBag  className='w-[30px] h-[30px] text-green-500 '/>
         </div>
     </div>
