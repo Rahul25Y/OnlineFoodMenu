@@ -3,7 +3,11 @@ import { LuLeafyGreen } from "react-icons/lu";
 import { GiChickenOven } from "react-icons/gi";
 import "aos/dist/aos.css";
 import Aos from "aos";
+import { useDispatch } from "react-redux";
+import { AddItem } from "./redux/cartSlice";
+import { toast } from "react-toastify";
 function Card({ id, name, image, price, type }) {
+  const dispatch=useDispatch()
   useEffect(() => {
     Aos.init({
       duration: 800,
@@ -40,6 +44,9 @@ function Card({ id, name, image, price, type }) {
         className="w-full bg-green-500 p-2 rounded-lg text-white hover:bg-green-400 transition-all duration-200"
         data-aos="fade-up"
         data-aos-anchor-placement="bottom-bottom"
+        onClick={()=>{dispatch(AddItem({id:id,name:name,price:price,image:image,qty:1}))
+        toast.success("Item added")
+        }}
       >
         Add to dish
       </button>
